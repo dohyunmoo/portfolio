@@ -1,12 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Project, Tag
 
 
 def home(request):
-    return render(request, "home.html")
+    projects = Project.objects.all()
+    tags = Tag.objects.all()
+
+    input = {"projects": projects, "tags": tags}
+
+    return render(request, "home.html", input)
+
 
 def contact(request):
     return render(request, "contact.html")
 
+
 def project(request, id):
-    return render(request, "project.html")
+    project = get_object_or_404(Project, pk=id)
+    return render(request, "project.html", {"project": project})
