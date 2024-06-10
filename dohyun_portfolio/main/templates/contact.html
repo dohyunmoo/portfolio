@@ -10,5 +10,16 @@ Contact Page
 {% endblock extrahead %}
 
 {% block content %}
-    <p>this is the contact page</p>
+    <div class="contact-panel">
+        <div class="panel">
+            <p>Email: <a href="mailto:dohyundoor@gmail.com">dohyundoor@gmail.com</a></p>
+        </div>
+        <div class="panel">
+            <p>LinkedIn<a href="https://www.linkedin.com/in/dohyun-m-50a551165/" target="_blank"><img src="../media/LinkedIn_icon.png" alt="LinkedIn Link" style="width: 80px; height: 80px"></a></p>
+        </div>
+    </div>
 {% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/contact.js' %}"></script>
+{% endblock extra_js %}
